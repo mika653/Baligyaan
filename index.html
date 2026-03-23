@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baligyaan — Authentic Filipino Snacks from Kalibo, Aklan</title>
+    <meta name="description" content="Baligyaan crafts premium Filipino snacks — banana chips, crispy shrimps, anchovies & squid — using fresh, locally sourced ingredients. No preservatives. FDA Licensed. Product of the Philippines.">
+    <meta property="og:title" content="Baligyaan — Authentic Filipino Snacks from Kalibo, Aklan">
+    <meta property="og:description" content="Premium ready-to-eat natural snacks crafted in small batches from Kalibo, Aklan. FDA Licensed. Now in major supermarkets nationwide.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Sans+3:ital,wght@0,300..900;1,200..900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --green-deep: #1B4332;
+            --green-mid: #2D6A4F;
+            --green-soft: #40916C;
+            --green-pale: #D8F3DC;
+            --gold: #C8963E;
+            --gold-light: #D4A853;
+            --gold-pale: #F5E6C8;
+            --gold-muted: #B8860B;
+            --cream: #FFF8F0;
+            --cream-dark: #F5EDE0;
+            --pina-ivory: #F5F0DC;
+            --maroon: #6B1D1D;
+            --maroon-light: #8B2E2E;
+            --festival-red: #CC2200;
+            --festival-yellow: #F5C518;
+            --brown-warm: #3E2723;
+            --charcoal: #1A1A18;
+            --text-primary: #2C2418;
+            --text-secondary: #4A4238;
+            --text-muted: #7A7060;
+            --white: #FFFFFF;
+            --shadow-sm: 0 2px 8px rgba(27,67,50,0.06);
+            --shadow-md: 0 8px 30px rgba(27,67,50,0.10);
+            --shadow-lg: 0 20px 60px rgba(27,67,50,0.14);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --font-display: 'Instrument Serif', Georgia, serif;
+            --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
+            --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+            scroll-padding-top: 72px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-primary);
+            background: var(--cream);
+            line-height: 1.75;
+            font-weight: 400;
+            font-size: 17px;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        img { max-width: 100%; height: auto; display: block; }
+        a { text-decoration: none; color: inherit; }
+        button { border: none; background: none; cursor: pointer; font-family: inherit; }
+
+        /* ===== TRIBAL DOT PATTERN (Ati-Atihan inspired) ===== */
+        .tribal-dots {
+            position: absolute;
+            pointer-events: none;
+        }
+
+        .tribal-dots::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle 2.5px, var(--gold) 100%, transparent 100%);
+            background-size: 18px 18px;
+            opacity: 0.12;
+        }
+
+        /* ===== BANIG / FESTIVAL WOVEN DIVIDER ===== */
+        .festival-divider {
+            width: 100%;
+            height: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .festival-divider::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                repeating-linear-gradient(
+                    90deg,
+                    var(--gold) 0px, var(--gold) 5px,
+                    var(--green-deep) 5px, var(--green-deep) 10px,
+                    var(--maroon) 10px, var(--maroon) 15px,
+                    var(--festival-yellow) 15px, var(--festival-yellow) 20px,
+                    var(--green-mid) 20px, var(--green-mid) 25px
+                );
+        }
+
+        .festival-divider::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent 0px, transparent 4px,
+                rgba(255,255,255,0.15) 4px, rgba(255,255,255,0.15) 5px
+            );
+        }
+
+        .banig-accent {
+            width: 64px;
+            height: 4px;
+            background: repeating-linear-gradient(
+                90deg,
+                var(--gold) 0px, var(--gold) 4px,
+                var(--green-deep) 4px, var(--green-deep) 8px,
+                var(--maroon) 8px, var(--maroon) 12px,
+                var(--festival-yellow) 12px, var(--festival-yellow) 16px
+            );
+        }
+
+        /* ===== PINA WEAVE TEXTURE ===== */
+        .pina-texture {
+            background-image:
+                linear-gradient(0deg, rgba(200,150,62,0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(200,150,62,0.04) 1px, transparent 1px);
+            background-size: 12px 12px;
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(36px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        @keyframes drumPulse {
+            0%, 100% { transform: scale(1); opacity: 0.15; }
+            50% { transform: scale(1.3); opacity: 0.25; }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+        }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-d1 { transition-delay: 0.1s; }
+        .reveal-d2 { transition-delay: 0.2s; }
+        .reveal-d3 { transition-delay: 0.3s; }
+        .reveal-d4 { transition-delay: 0.4s; }
+        .reveal-d5 { transition-delay: 0.5s; }
+
+        /* ===== NAVIGATION ===== */
+        .nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 100;
+            background: rgba(255,248,240,0.92);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(27,67,50,0.06);
+            transition: box-shadow 0.4s ease;
+        }
+        .nav.scrolled { box-shadow: var(--shadow-sm); }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .nav-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        .nav-logo-text {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            color: var(--maroon);
+        }
+
+        .nav-links {
+            display: none;
+            list-style: none;
+            gap: 28px;
+            align-items: center;
+        }
+        .nav-links a {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px; left: 0;
+            width: 0; height: 2px;
+            background: var(--gold);
+            transition: width 0.3s var(--ease-out);
+        }
+        .nav-links a:hover { color: var(--green-deep); }
+        .nav-links a:hover::after { width: 100%; }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 8px;
+            z-index: 110;
+        }
+        .hamburger span {
+            width: 24px; height: 2px;
+            background: var(--green-deep);
+            transition: all 0.3s var(--ease-out);
+            transform-origin: center;
+        }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        .mobile-menu {
+            position: fixed;
+            top: 0; right: -100%;
+            width: 100%; height: 100dvh;
+            background: var(--cream);
+            z-index: 105;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: right 0.5s var(--ease-out);
+        }
+        .mobile-menu.open { right: 0; }
+        .mobile-menu a {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            color: var(--green-deep);
+            padding: 16px 0;
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.4s ease, transform 0.4s var(--ease-out), color 0.3s;
+        }
+        .mobile-menu.open a { opacity: 1; transform: translateX(0); }
+        .mobile-menu.open a:nth-child(1) { transition-delay: 0.12s; }
+        .mobile-menu.open a:nth-child(2) { transition-delay: 0.18s; }
+        .mobile-menu.open a:nth-child(3) { transition-delay: 0.24s; }
+        .mobile-menu.open a:nth-child(4) { transition-delay: 0.30s; }
+        .mobile-menu.open a:nth-child(5) { transition-delay: 0.36s; }
+        .mobile-menu.open a:nth-child(6) { transition-delay: 0.42s; }
+        .mobile-menu a:hover { color: var(--gold); }
+
+        /* ===== HERO ===== */
+        .hero {
+            min-height: 100dvh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 100px 24px 60px;
+            position: relative;
+            overflow: hidden;
+            background: var(--green-deep);
+        }
+
+        /* Layered atmospheric background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(ellipse 80% 50% at 50% 130%, rgba(200,150,62,0.18) 0%, transparent 70%),
+                radial-gradient(ellipse 50% 40% at 15% 20%, rgba(45,106,79,0.3) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 35% at 85% 25%, rgba(107,29,29,0.2) 0%, transparent 50%);
+        }
+
+        /* Festival-inspired tribal dot decoration on hero */
+        .hero-tribal-left,
+        .hero-tribal-right {
+            position: absolute;
+            z-index: 1;
+            pointer-events: none;
+        }
+        .hero-tribal-left {
+            top: 15%; left: 3%;
+            width: 60px; height: 200px;
+            opacity: 0.12;
+        }
+        .hero-tribal-right {
+            bottom: 20%; right: 3%;
+            width: 60px; height: 200px;
+            opacity: 0.10;
+        }
+        .hero-tribal-left svg, .hero-tribal-right svg {
+            width: 100%; height: 100%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255,248,240,0.08);
+            border: 1px solid rgba(200,150,62,0.3);
+            padding: 8px 20px;
+            border-radius: 100px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: var(--gold-pale);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 28px;
+            animation: fadeIn 1s ease 0.3s both;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.6rem, 7.5vw, 4.4rem);
+            line-height: 1.1;
+            color: var(--cream);
+            margin-bottom: 24px;
+            animation: fadeInUp 1s var(--ease-out) 0.5s both;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold-light);
+        }
+
+        .hero-sub {
+            font-size: clamp(1.05rem, 2.5vw, 1.2rem);
+            color: rgba(255,248,240,0.7);
+            max-width: 500px;
+            margin: 0 auto 40px;
+            line-height: 1.8;
+            font-weight: 300;
+            animation: fadeInUp 1s var(--ease-out) 0.7s both;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gold);
+            color: var(--white);
+            padding: 16px 40px;
+            border-radius: 100px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            transition: all 0.4s var(--ease-out);
+            animation: fadeInUp 1s var(--ease-out) 0.9s both;
+            box-shadow: 0 4px 24px rgba(200,150,62,0.3);
+        }
+        .hero-cta:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(200,150,62,0.4);
+        }
+        .hero-cta svg {
+            width: 18px; height: 18px;
+            transition: transform 0.3s ease;
+        }
+        .hero-cta:hover svg { transform: translateX(4px); }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: 32px; left: 50%;
+            transform: translateX(-50%);
+            z-index: 2;
+            animation: float 3s ease-in-out infinite, fadeIn 1s ease 1.5s both;
+        }
+        .hero-scroll svg {
+            width: 24px; height: 24px;
+            color: rgba(255,248,240,0.3);
+        }
+
+        /* ===== SECTION BASE ===== */
+        .section { padding: 80px 24px; }
+        .section-container { max-width: 1100px; margin: 0 auto; }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+        .section-title {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 5vw, 3rem);
+            line-height: 1.15;
+            color: var(--green-deep);
+            margin-bottom: 20px;
+        }
+        .section-title em { font-style: italic; color: var(--maroon); }
+
+        /* ===== EMOTIONAL HOOK — "Taste of Home" ===== */
+        .emotion {
+            background: var(--pina-ivory);
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        /* Pina cloth weave texture overlay */
+        .emotion::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(0deg, rgba(200,150,62,0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(200,150,62,0.05) 1px, transparent 1px);
+            background-size: 14px 14px;
+            pointer-events: none;
+        }
+
+        .emotion-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .emotion-quote {
+            font-family: var(--font-display);
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            line-height: 1.4;
+            color: var(--green-deep);
+            margin-bottom: 24px;
+            font-style: italic;
+        }
+
+        .emotion-quote span {
+            color: var(--maroon);
+        }
+
+        .emotion-body {
+            font-size: 1.05rem;
+            color: var(--text-secondary);
+            line-height: 1.9;
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        /* Festival drumbeat dots decorating the emotional section */
+        .emotion-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 28px;
+        }
+        .emotion-dots span {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            animation: drumPulse 2s ease-in-out infinite;
+        }
+        .emotion-dots span:nth-child(1) { background: var(--gold); animation-delay: 0s; }
+        .emotion-dots span:nth-child(2) { background: var(--green-deep); animation-delay: 0.2s; }
+        .emotion-dots span:nth-child(3) { background: var(--maroon); animation-delay: 0.4s; }
+        .emotion-dots span:nth-child(4) { background: var(--festival-yellow); animation-delay: 0.6s; }
+        .emotion-dots span:nth-child(5) { background: var(--green-mid); animation-delay: 0.8s; }
+
+        /* ===== ABOUT ===== */
+        .about { background: var(--cream); }
+
+        .about-grid {
+            display: grid;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .about-image-wrap {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            box-shadow: var(--shadow-lg);
+        }
+        .about-image-wrap img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+        }
+
+        /* Tribal corner accent on the image */
+        .about-image-accent {
+            position: absolute;
+            bottom: 0; right: 0;
+            width: 80px; height: 80px;
+            pointer-events: none;
+        }
+        .about-image-accent svg { width: 100%; height: 100%; }
+
+        .about-text p {
+            font-size: 1.08rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.85;
+        }
+        .about-text p:first-of-type::first-letter {
+            font-family: var(--font-display);
+            font-size: 3.4rem;
+            float: left;
+            line-height: 1;
+            margin-right: 8px;
+            margin-top: 6px;
+            color: var(--green-deep);
+        }
+
+        .about-values {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 28px;
+        }
+        .about-value {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+        .about-value svg {
+            width: 20px; height: 20px;
+            color: var(--green-soft);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        /* ===== PRODUCTS ===== */
+        .products {
+            background: var(--green-deep);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle tribal pattern overlay on products section */
+        .products::after {
+            content: '';
+            position: absolute;
+            top: 0; right: 0;
+            width: 200px; height: 200px;
+            background-image: radial-gradient(circle 2px, rgba(200,150,62,0.08) 100%, transparent 100%);
+            background-size: 20px 20px;
+            pointer-events: none;
+        }
+
+        .products .section-label { color: var(--gold-pale); }
+        .products .section-title { color: var(--cream); }
+        .products .section-title em { color: var(--gold-light); }
+
+        .products-intro {
+            color: rgba(255,248,240,0.6);
+            font-size: 1.08rem;
+            max-width: 540px;
+            margin-bottom: 48px;
+            line-height: 1.85;
+        }
+
+        .products-grid {
+            display: grid;
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .product-card {
+            background: rgba(255,248,240,0.05);
+            border: 1px solid rgba(255,248,240,0.07);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all 0.5s var(--ease-out);
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(200,150,62,0.3);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.25);
+            background: rgba(255,248,240,0.08);
+        }
+
+        .product-image {
+            aspect-ratio: 1;
+            overflow: hidden;
+        }
+        .product-image img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s var(--ease-out);
+        }
+        .product-card:hover .product-image img { transform: scale(1.06); }
+
+        .product-image-placeholder {
+            width: 100%; height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-image-placeholder svg {
+            width: 40px; height: 40px;
+            opacity: 0.4;
+        }
+
+        .product-info { padding: 20px; }
+
+        .product-tag {
+            display: inline-block;
+            font-size: 0.68rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            background: rgba(200,150,62,0.12);
+            padding: 4px 10px;
+            border-radius: 100px;
+            margin-bottom: 10px;
+        }
+        .product-name {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            color: var(--cream);
+            margin-bottom: 8px;
+            line-height: 1.25;
+        }
+        .product-desc {
+            font-size: 0.9rem;
+            color: rgba(255,248,240,0.55);
+            line-height: 1.65;
+            margin-bottom: 12px;
+        }
+        .product-meta {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-size: 0.78rem;
+            color: rgba(255,248,240,0.38);
+        }
+        .product-meta span { display: flex; align-items: center; gap: 4px; }
+        .product-meta svg { width: 13px; height: 13px; }
+
+        /* ===== TRUST ===== */
+        .trust {
+            background: var(--cream-dark);
+            padding: 60px 24px;
+        }
+        .trust-inner { max-width: 1100px; margin: 0 auto; }
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .trust-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 12px;
+            padding: 28px 16px;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(27,67,50,0.05);
+            transition: all 0.4s var(--ease-out);
+        }
+        .trust-badge:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+        .trust-icon {
+            width: 52px; height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--green-pale);
+            border-radius: 50%;
+            color: var(--green-deep);
+        }
+        .trust-icon svg { width: 24px; height: 24px; }
+        .trust-badge h4 {
+            font-family: var(--font-display);
+            font-size: 1.08rem;
+            color: var(--green-deep);
+        }
+        .trust-badge p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+        }
+
+        /* ===== WHERE TO FIND ===== */
+        .wheretofind {
+            background: var(--cream);
+            text-align: center;
+        }
+        .wheretofind-desc {
+            font-size: 1.08rem;
+            color: var(--text-secondary);
+            max-width: 520px;
+            margin: 0 auto 40px;
+            line-height: 1.85;
+        }
+        .stores-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            max-width: 640px;
+            margin: 0 auto;
+        }
+        .store-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 24px;
+            background: var(--white);
+            border: 1px solid rgba(27,67,50,0.07);
+            border-radius: 100px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-primary);
+            transition: all 0.3s var(--ease-out);
+        }
+        .store-pill:hover {
+            border-color: var(--gold);
+            box-shadow: var(--shadow-sm);
+            transform: translateY(-1px);
+        }
+        .store-pill svg { width: 18px; height: 18px; color: var(--gold); }
+        .wheretofind-note {
+            margin-top: 32px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* ===== CTA BANNER ===== */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--maroon) 0%, var(--green-deep) 100%);
+            padding: 64px 24px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        /* Festival stripe texture */
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                120deg,
+                transparent 0px, transparent 50px,
+                rgba(255,255,255,0.015) 50px, rgba(255,255,255,0.015) 52px
+            );
+        }
+        .cta-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .cta-banner h2 {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4.5vw, 2.5rem);
+            color: var(--cream);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+        .cta-banner p {
+            color: rgba(255,248,240,0.68);
+            margin-bottom: 28px;
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+        .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--gold);
+            color: var(--white);
+            padding: 16px 36px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.4s var(--ease-out);
+            box-shadow: 0 4px 20px rgba(200,150,62,0.3);
+        }
+        .cta-btn:hover {
+            background: var(--gold-light);
+            transform: translateY(-2px);
+        }
+        .cta-btn svg { width: 18px; height: 18px; }
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: var(--brown-warm);
+            color: rgba(255,248,240,0.6);
+            padding: 64px 24px 32px;
+        }
+        .footer-inner { max-width: 1100px; margin: 0 auto; }
+        .footer-grid {
+            display: grid;
+            gap: 40px;
+            margin-bottom: 48px;
+        }
+        .footer-brand .nav-logo { margin-bottom: 16px; }
+        .footer-brand .nav-logo-text { color: var(--cream); }
+        .footer-brand p { font-size: 0.95rem; line-height: 1.75; max-width: 300px; }
+        .footer h5 {
+            font-family: var(--font-display);
+            font-size: 1.12rem;
+            color: var(--cream);
+            margin-bottom: 16px;
+        }
+        .footer-links {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .footer-links a {
+            font-size: 0.92rem;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover { color: var(--gold-light); }
+        .footer-contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 14px;
+            font-size: 0.92rem;
+        }
+        .footer-contact-item svg {
+            width: 18px; height: 18px;
+            flex-shrink: 0;
+            margin-top: 3px;
+            color: var(--gold);
+        }
+        .footer-social {
+            display: flex;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .footer-social a {
+            width: 44px; height: 44px;
+            border-radius: 50%;
+            background: rgba(255,248,240,0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        .footer-social a:hover {
+            background: var(--gold);
+            transform: translateY(-2px);
+        }
+        .footer-social svg { width: 18px; height: 18px; color: var(--cream); }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,248,240,0.08);
+            padding-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+            text-align: center;
+        }
+        .footer-bottom p { font-size: 0.82rem; }
+        .footer-ph {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.82rem;
+            color: rgba(255,248,240,0.4);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (min-width: 640px) {
+            .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .trust-grid { grid-template-columns: repeat(4, 1fr); }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (min-width: 900px) {
+            body { font-size: 18px; }
+            .section { padding: 120px 48px; }
+            .trust { padding: 80px 48px; }
+            .cta-banner { padding: 80px 48px; }
+            .footer { padding: 80px 48px 40px; }
+            .nav-inner { padding: 0 48px; }
+            .nav-links { display: flex; }
+            .hamburger { display: none; }
+            .about-grid {
+                grid-template-columns: 1fr 1.15fr;
+                gap: 72px;
+            }
+            .products-grid { grid-template-columns: repeat(3, 1fr); }
+            .footer-grid { grid-template-columns: 1.4fr 0.8fr 1fr; }
+            .footer-bottom { flex-direction: row; justify-content: space-between; }
+        }
+
+        @media (min-width: 1060px) {
+            .products-grid { grid-template-columns: repeat(5, 1fr); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+            .reveal { opacity: 1; transform: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="#" class="nav-logo" aria-label="Baligyaan Home">
+                <img src="logo.jpg" alt="Baligyaan logo">
+                <span class="nav-logo-text">baligyaan</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#emotion">Our Promise</a></li>
+                <li><a href="#about">Our Story</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#trust">Credentials</a></li>
+                <li><a href="#find-us">Find Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" role="dialog" aria-label="Mobile navigation">
+        <a href="#emotion">Our Promise</a>
+        <a href="#about">Our Story</a>
+        <a href="#products">Products</a>
+        <a href="#trust">Credentials</a>
+        <a href="#find-us">Find Us</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+        <!-- Ati-Atihan tribal dot columns -->
+        <div class="hero-tribal-left" aria-hidden="true">
+            <svg viewBox="0 0 60 200" fill="none">
+                <circle cx="10" cy="10" r="3" fill="#C8963E" opacity="0.5"/>
+                <circle cx="30" cy="10" r="2" fill="#F5C518" opacity="0.3"/>
+                <circle cx="50" cy="10" r="3" fill="#C8963E" opacity="0.4"/>
+                <circle cx="20" cy="30" r="4" fill="#CC2200" opacity="0.25"/>
+                <circle cx="40" cy="30" r="2" fill="#C8963E" opacity="0.4"/>
+                <circle cx="10" cy="50" r="2" fill="#F5C518" opacity="0.3"/>
+                <circle cx="30" cy="50" r="5" fill="#C8963E" opacity="0.2"/>
+                <circle cx="50" cy="50" r="3" fill="#CC2200" opacity="0.2"/>
+                <circle cx="20" cy="70" r="3" fill="#C8963E" opacity="0.35"/>
+                <circle cx="40" cy="70" r="2" fill="#F5C518" opacity="0.25"/>
+                <circle cx="10" cy="90" r="4" fill="#CC2200" opacity="0.2"/>
+                <circle cx="30" cy="90" r="2" fill="#C8963E" opacity="0.4"/>
+                <circle cx="50" cy="90" r="3" fill="#F5C518" opacity="0.2"/>
+                <circle cx="20" cy="110" r="2" fill="#C8963E" opacity="0.3"/>
+                <circle cx="40" cy="110" r="4" fill="#CC2200" opacity="0.15"/>
+                <circle cx="10" cy="130" r="3" fill="#F5C518" opacity="0.2"/>
+                <circle cx="30" cy="130" r="3" fill="#C8963E" opacity="0.3"/>
+                <circle cx="50" cy="130" r="2" fill="#CC2200" opacity="0.25"/>
+                <circle cx="20" cy="150" r="4" fill="#C8963E" opacity="0.2"/>
+                <circle cx="40" cy="150" r="3" fill="#F5C518" opacity="0.15"/>
+                <circle cx="10" cy="170" r="2" fill="#CC2200" opacity="0.2"/>
+                <circle cx="30" cy="170" r="3" fill="#C8963E" opacity="0.25"/>
+                <circle cx="50" cy="170" r="4" fill="#F5C518" opacity="0.15"/>
+                <circle cx="20" cy="190" r="3" fill="#C8963E" opacity="0.2"/>
+                <circle cx="40" cy="190" r="2" fill="#CC2200" opacity="0.2"/>
+            </svg>
+        </div>
+        <div class="hero-tribal-right" aria-hidden="true">
+            <svg viewBox="0 0 60 200" fill="none">
+                <circle cx="10" cy="15" r="3" fill="#F5C518" opacity="0.3"/>
+                <circle cx="30" cy="15" r="4" fill="#C8963E" opacity="0.25"/>
+                <circle cx="50" cy="15" r="2" fill="#CC2200" opacity="0.3"/>
+                <circle cx="20" cy="40" r="2" fill="#C8963E" opacity="0.35"/>
+                <circle cx="40" cy="40" r="3" fill="#F5C518" opacity="0.2"/>
+                <circle cx="10" cy="65" r="4" fill="#CC2200" opacity="0.15"/>
+                <circle cx="30" cy="65" r="2" fill="#C8963E" opacity="0.3"/>
+                <circle cx="50" cy="65" r="3" fill="#F5C518" opacity="0.2"/>
+                <circle cx="20" cy="90" r="3" fill="#C8963E" opacity="0.25"/>
+                <circle cx="40" cy="90" r="4" fill="#CC2200" opacity="0.15"/>
+                <circle cx="10" cy="115" r="2" fill="#F5C518" opacity="0.25"/>
+                <circle cx="30" cy="115" r="3" fill="#C8963E" opacity="0.2"/>
+                <circle cx="50" cy="115" r="2" fill="#CC2200" opacity="0.2"/>
+                <circle cx="20" cy="140" r="4" fill="#C8963E" opacity="0.15"/>
+                <circle cx="40" cy="140" r="3" fill="#F5C518" opacity="0.2"/>
+                <circle cx="10" cy="165" r="3" fill="#CC2200" opacity="0.15"/>
+                <circle cx="30" cy="165" r="2" fill="#C8963E" opacity="0.3"/>
+                <circle cx="50" cy="165" r="4" fill="#F5C518" opacity="0.1"/>
+                <circle cx="20" cy="190" r="2" fill="#C8963E" opacity="0.2"/>
+                <circle cx="40" cy="190" r="3" fill="#CC2200" opacity="0.15"/>
+            </svg>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1l2.35 4.76 5.25.76-3.8 3.7.9 5.24L8 13.27l-4.7 2.47.9-5.24-3.8-3.7 5.25-.76L8 1z" fill="currentColor"/></svg>
+                Galing ng Kalibo, Aklan
+            </div>
+            <h1>Every Bite, a <em>Celebration</em></h1>
+            <p class="hero-sub">Born from the festive spirit of Kalibo, our snacks carry the warmth of Filipino kitchens and the pride of Aklan — made with fresh ingredients, zero preservatives, and a whole lot of heart.</p>
+            <a href="#products" class="hero-cta">
+                Explore Our Products
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+            </a>
+        </div>
+
+        <div class="hero-scroll" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+        </div>
+    </section>
+
+    <div class="festival-divider" aria-hidden="true"></div>
+
+    <!-- EMOTIONAL HOOK -->
+    <section class="section emotion" id="emotion">
+        <div class="section-container">
+            <div class="emotion-inner">
+                <div class="emotion-dots reveal" aria-hidden="true">
+                    <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <p class="emotion-quote reveal reveal-d1">
+                    "Remember that first crunch of banana chips on a long road trip home? That salty-sweet handful of dilis shared between friends over cold drinks? <span>That's the feeling we put into every pack.</span>"
+                </p>
+                <div class="banig-accent reveal reveal-d2" style="margin: 28px auto;"></div>
+                <p class="emotion-body reveal reveal-d3">
+                    Baligyaan isn't just a snack — it's a pasalubong from someone who cares, a merienda that brings the family together, a taste that takes you straight back to the province. We make food the way your lola would — with patience, with real ingredients, and with love you can taste.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <div class="festival-divider" aria-hidden="true"></div>
+
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+        <div class="section-container">
+            <div class="about-grid">
+                <div class="about-image-wrap reveal">
+                    <img src="banana chips.jpg" alt="Baligyaan Banana Chips with Honey — front and back of golden packaging showing nutrition facts and product details" loading="lazy">
+                    <!-- Tribal corner pattern -->
+                    <div class="about-image-accent" aria-hidden="true">
+                        <svg viewBox="0 0 80 80" fill="none">
+                            <path d="M80 0v80H0" stroke="#C8963E" stroke-width="2" opacity="0.4"/>
+                            <path d="M80 15v65H15" stroke="#C8963E" stroke-width="1.5" opacity="0.25"/>
+                            <circle cx="70" cy="70" r="3" fill="#C8963E" opacity="0.4"/>
+                            <circle cx="55" cy="70" r="2" fill="#F5C518" opacity="0.3"/>
+                            <circle cx="70" cy="55" r="2" fill="#CC2200" opacity="0.3"/>
+                            <circle cx="60" cy="60" r="1.5" fill="#C8963E" opacity="0.35"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p class="section-label reveal">Our Story</p>
+                    <h2 class="section-title reveal reveal-d1">Rooted in <em>Aklanon Pride</em></h2>
+                    <div class="banig-accent reveal reveal-d2" style="margin-bottom: 24px;"></div>
+                    <p class="reveal reveal-d2">Baligyaan was born from a simple belief: that the best snacks come from honest ingredients and time-honored recipes. From our kitchen in Kalibo, Aklan — the home of the Ati-Atihan festival — we craft every batch with the same fiesta spirit and family warmth that Aklanons are known for.</p>
+                    <p class="reveal reveal-d3">Using only fresh, locally sourced ingredients, we cook in small batches to ensure every piece meets our standard. No artificial flavors. No artificial colors. No preservatives — just the pure, vibrant taste of the Philippines in every bite.</p>
+                    <div class="about-values reveal reveal-d4">
+                        <div class="about-value">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                            <span>All-natural ingredients</span>
+                        </div>
+                        <div class="about-value">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                            <span>Small-batch crafted</span>
+                        </div>
+                        <div class="about-value">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                            <span>Zero preservatives</span>
+                        </div>
+                        <div class="about-value">
+                            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"/></svg>
+                            <span>Proudly Aklanon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section products" id="products">
+        <div class="section-container">
+            <p class="section-label reveal">Our Products</p>
+            <h2 class="section-title reveal reveal-d1">Ready-to-Eat <em>Natural Snacks</em></h2>
+            <p class="products-intro reveal reveal-d2">Each product is cooked in batches using fresh ingredients — the same way it's been done in Aklanon kitchens for generations. No shortcuts, no compromises.</p>
+
+            <div class="products-grid">
+                <div class="product-card reveal">
+                    <div class="product-image">
+                        <div class="product-image-placeholder" style="background: linear-gradient(145deg, #E8C547 0%, #D4A017 50%, #B8860B 100%);">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"><ellipse cx="24" cy="24" rx="12" ry="16" transform="rotate(-20 24 24)"/></svg>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">Bestseller</span>
+                        <h3 class="product-name">Banana Chips with Honey</h3>
+                        <p class="product-desc">Crispy golden saba banana slices kissed with pure honey. The merienda staple that never gets old.</p>
+                        <div class="product-meta">
+                            <span><svg viewBox="0 0 16 16" fill="currentColor"><rect x="3" y="6" width="10" height="8" rx="1.5"/><path d="M5 6V4a3 3 0 016 0v2"/></svg>200g</span>
+                            <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><path d="M5.5 8h5"/></svg>No Preservatives</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card reveal reveal-d1">
+                    <div class="product-image">
+                        <div class="product-image-placeholder" style="background: linear-gradient(145deg, #8B6914 0%, #6B4F1D 50%, #4A3520 100%);">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"><path d="M12 28c6-2 12-8 18-6s6 10 2 12-10-2-16 0-8-4-4-6z"/></svg>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">Sweet & Spicy</span>
+                        <h3 class="product-name">De-Boned Anchovies</h3>
+                        <p class="product-desc">Tender boneless dilis in a sweet-spicy glaze. Perfect pulutan with your favorite cold drink.</p>
+                        <div class="product-meta">
+                            <span><svg viewBox="0 0 16 16" fill="currentColor"><rect x="3" y="6" width="10" height="8" rx="1.5"/><path d="M5 6V4a3 3 0 016 0v2"/></svg>100g</span>
+                            <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><path d="M5.5 8h5"/></svg>All Natural</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card reveal reveal-d2">
+                    <div class="product-image">
+                        <div class="product-image-placeholder" style="background: linear-gradient(145deg, #A0522D 0%, #7B3F00 50%, #5C2E00 100%);">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"><ellipse cx="24" cy="20" rx="8" ry="10"/><path d="M16 28c-2 4-4 8-2 10M24 28v12M32 28c2 4 4 8 2 10"/></svg>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">Sweet & Spicy</span>
+                        <h3 class="product-name">Squid</h3>
+                        <p class="product-desc">Savory dried squid with a bold sweet-spicy kick. Irresistible once you start — consider yourself warned.</p>
+                        <div class="product-meta">
+                            <span><svg viewBox="0 0 16 16" fill="currentColor"><rect x="3" y="6" width="10" height="8" rx="1.5"/><path d="M5 6V4a3 3 0 016 0v2"/></svg>100g</span>
+                            <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><path d="M5.5 8h5"/></svg>Ready to Eat</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card reveal reveal-d3">
+                    <div class="product-image">
+                        <div class="product-image-placeholder" style="background: linear-gradient(145deg, #CD853F 0%, #B8733A 50%, #8B5E3C 100%);">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"><path d="M10 30c4-6 10-14 20-12s8 10 4 14-12 2-18 4-10-2-6-6z"/></svg>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">Crispy</span>
+                        <h3 class="product-name">Crispy Shrimps</h3>
+                        <p class="product-desc">Delicately crispy whole shrimps seasoned to perfection. Crunchy, savory, and absolutely addicting.</p>
+                        <div class="product-meta">
+                            <span><svg viewBox="0 0 16 16" fill="currentColor"><rect x="3" y="6" width="10" height="8" rx="1.5"/><path d="M5 6V4a3 3 0 016 0v2"/></svg>100g</span>
+                            <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><path d="M5.5 8h5"/></svg>No Additives</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card reveal reveal-d4">
+                    <div class="product-image">
+                        <div class="product-image-placeholder" style="background: linear-gradient(145deg, #9B7032 0%, #7A5A28 50%, #5C4020 100%);">
+                            <svg viewBox="0 0 48 48" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"><path d="M8 24c8-4 12-6 16-4s8 6 14 4"/><path d="M10 30c8-4 12-6 16-4s8 6 14 4"/></svg>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-tag">Sweet & Spicy</span>
+                        <h3 class="product-name">Anchovies</h3>
+                        <p class="product-desc">Whole dilis tossed in a sweet-spicy blend. A beloved Filipino classic, elevated to pasalubong-worthy.</p>
+                        <div class="product-meta">
+                            <span><svg viewBox="0 0 16 16" fill="currentColor"><rect x="3" y="6" width="10" height="8" rx="1.5"/><path d="M5 6V4a3 3 0 016 0v2"/></svg>100g</span>
+                            <span><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="8" cy="8" r="5.5"/><path d="M5.5 8h5"/></svg>No Preservatives</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="festival-divider" aria-hidden="true"></div>
+
+    <!-- TRUST -->
+    <section class="trust" id="trust">
+        <div class="trust-inner">
+            <div class="trust-grid">
+                <div class="trust-badge reveal">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <h4>FDA Licensed</h4>
+                    <p>Fully compliant with Philippine FDA standards for food safety and quality.</p>
+                </div>
+                <div class="trust-badge reveal reveal-d1">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 00-8 0v2"/><circle cx="12" cy="15" r="2"/></svg>
+                    </div>
+                    <h4>DTI Supported</h4>
+                    <p>Backed by the Department of Trade and Industry's SME development programs.</p>
+                </div>
+                <div class="trust-badge reveal reveal-d2">
+                    <div class="trust-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+                    </div>
+                    <h4>DOST Supported</h4>
+                    <p>Assisted by DOST for product innovation and technology advancement.</p>
+                </div>
+                <div class="trust-badge reveal reveal-d3">
+                    <div class="trust-icon" style="background: rgba(200,150,62,0.12); color: var(--gold);">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+                    </div>
+                    <h4>Proudly Filipino</h4>
+                    <p>Made in Kalibo, Aklan — crafted with love for the Philippines and the world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHERE TO FIND -->
+    <section class="section wheretofind" id="find-us">
+        <div class="section-container">
+            <p class="section-label reveal">Where to Find Us</p>
+            <h2 class="section-title reveal reveal-d1">Now in Major <em>Supermarkets</em></h2>
+            <p class="wheretofind-desc reveal reveal-d2">From our kitchen in Kalibo to shelves across the nation — find Baligyaan snacks at these stores and growing.</p>
+            <div class="stores-list reveal reveal-d3">
+                <div class="store-pill">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                    Major Supermarkets
+                </div>
+                <div class="store-pill">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                    Pasalubong Centers
+                </div>
+                <div class="store-pill">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                    Local Retailers in Aklan
+                </div>
+                <div class="store-pill">
+                    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/></svg>
+                    Select Online Stores
+                </div>
+            </div>
+            <p class="wheretofind-note reveal reveal-d4">Interested in carrying Baligyaan? <a href="#contact" style="color: var(--gold); font-weight: 600; text-decoration: underline;">Get in touch</a> for wholesale inquiries.</p>
+        </div>
+    </section>
+
+    <!-- CTA BANNER -->
+    <section class="cta-banner">
+        <div class="cta-inner reveal">
+            <h2>Bring the Taste of Aklan to Your Table</h2>
+            <p>Whether it's for your store shelves, a fiesta spread, or a pasalubong for someone you love — we'd love to be part of the moment.</p>
+            <a href="#contact" class="cta-btn">
+                Contact Us
+                <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h10M11 6l4 4-4 4"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="contact">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="nav-logo">
+                        <img src="logo.jpg" alt="" width="36" height="36" style="border-radius:50%; object-fit:cover;">
+                        <span class="nav-logo-text">baligyaan</span>
+                    </div>
+                    <p>Authentic Filipino snacks crafted in small batches from Kalibo, Aklan. Made with love, shared with pride — from our family to yours.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                        </a>
+                        <a href="#" aria-label="TikTok">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 0010.86 4.46V13a8.28 8.28 0 005.58 2.15V11.7a4.83 4.83 0 01-3.78-1.23V6.69h3.78z"/></svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="#emotion">Our Promise</a></li>
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#trust">Credentials</a></li>
+                        <li><a href="#find-us">Where to Find Us</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5>Get in Touch</h5>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>Kalibo, Aklan<br>Philippines</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                        <span>hello@baligyaan.com</span>
+                    </div>
+                    <div class="footer-contact-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.12.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.58 2.81.7A2 2 0 0122 16.92z"/></svg>
+                        <span>Contact us via social media</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Baligyaan. All rights reserved.</p>
+                <div class="footer-ph">
+                    <svg width="18" height="13" viewBox="0 0 640 480" aria-hidden="true"><rect width="640" height="240" fill="#0038A8"/><rect y="240" width="640" height="240" fill="#CE1126"/><polygon points="0,0 280,240 0,480" fill="#FFF"/><circle cx="105" cy="240" r="40" fill="none" stroke="#FCD116" stroke-width="5"/></svg>
+                    Proudly made in the Philippines
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu
+        const hamburger = document.querySelector('.hamburger');
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+
+        hamburger.addEventListener('click', () => {
+            const isOpen = mobileMenu.classList.toggle('open');
+            hamburger.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isOpen);
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                hamburger.classList.remove('active');
+                hamburger.setAttribute('aria-expanded', 'false');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // Nav scroll
+        window.addEventListener('scroll', () => {
+            document.querySelector('.nav').classList.toggle('scrolled', window.scrollY > 40);
+        }, { passive: true });
+
+        // Reveal on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
